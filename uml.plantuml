@@ -1,0 +1,37 @@
+@startuml
+
+class Usuario {
+    +id
+    nombre
+    email
+}
+
+class Autor {
+    +id
+    nombre
+}
+
+class Libro {
+    +id
+    titulo
+    isbn
+}
+
+class Resena {
+    +id
+    contenido
+}
+
+class Categoria {
+    +id
+    nombre
+}
+
+Usuario "1" -- "n" Libro : reserva
+Usuario "1" -- "n" Resena : deja
+Autor "1" -- "n" Libro : escribe
+Libro "1" -- "n" Resena : tiene
+Libro "n" -- "m" Categoria : pertenece_a
+
+@enduml
+#hora de inicio 10:25 fin 10:40
